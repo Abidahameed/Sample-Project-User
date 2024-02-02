@@ -1,0 +1,47 @@
+<div class="header">
+  <h1 class="small-h1">VIEW DETAILS</h1>
+  <button class="close-button" (click)="closeView()">X</button>
+</div>
+
+<div class="register-block">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2 custom-margin">
+        <div class="card">
+          <img [src]="data.image" alt="{{ data.name }}" class="img-fluid small-image">
+
+          <div class="text-center">
+            <h5 class="card-title">{{ data.name }}</h5>
+          </div>
+
+          <div class="card-body">
+            <p>Color: {{ data.colour }}</p>
+            <p>Size: {{ data.size }}</p>
+            <p>Price: {{ data.price }}</p>
+          </div>
+
+          <!-- Increment and Decrement Buttons -->
+          <!-- <div class="quantity-controls">
+            <button class="quantity-button minus" (click)="decrementQuantity()">-</button>
+            <span class="quantity-value">{{ quantity }}</span>
+            <button class="quantity-button plus" (click)="incrementQuantity()">+</button>
+          </div> -->
+
+          <!-- Add to Cart Button -->
+         <!-- Add to Cart Button with both functions -->
+         <button mat-raised-button  type="submit"  class="btn btn-outline-info custom-small-button" (click)="addToCartAndCloseView()">ADD TO CART</button>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--<div class="cart">
+
+  <ul id="cart-items">
+    <!-- Cart items will be displayed here -->
+  <!--</ul>
+</div>-->
+

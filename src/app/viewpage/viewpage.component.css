@@ -1,0 +1,113 @@
+.card{
+    width: 600px;
+    height: 320px;
+}
+.text-center {
+    text-align: center;
+    font-size: 800;
+  }
+  .card-title{
+    font-size: 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: absolute;
+    margin-top: -345px;
+    margin-left: 313px;
+}
+.small-image {
+    width: 313px;
+    height: 333px;
+    position: relative;
+    padding: 16px;
+    padding-right: 16px;
+    padding-left: 36px;
+    margin-left: -28px;
+    margin-bottom: 24px;
+    margin-top: -7px;
+}
+  .close-icon {
+    margin-left: auto;
+    color:  blue; /* Icon color */
+    font-size: 24px; /* Icon size */
+    text-decoration: none;
+  }
+  .small-h1 {
+    font-size: 18px; 
+    color: rgb(255, 255, 255);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   
+    margin-left: 15px;
+    margin-top: 15px;
+  }
+  .header {
+    height: 50px; /* Adjust the height as needed */
+    background-color: #9445f0; /* You can set a background color if desired */
+    text-align: center; /* Center the content vertically */
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-right: 13px;
+    margin-left: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+      
+      .close-button {
+        background: none;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        font-size: 20px; 
+        color: white; /* Change the color as needed */
+       margin-right: 15px;
+      }
+      /* Styling for the plus and minus buttons */
+      .quantity-controls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: -32px;
+        position: absolute;
+        right: 111px;
+        top: 225px;
+    }
+  
+  .quantity-button {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin: 0 5px;
+    border-radius: 50%;
+  }
+  
+  .quantity-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .card-body {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+    position: absolute;
+    right: 166px;
+    bottom: 125px;
+}    
+.btn-outline-info {
+    color: #17a2b8;
+    background-color: transparent;
+    background-image: none;
+    border-color: #17a2b8;
+    width: 250px;
+    position: absolute;
+    right: 39px;
+    top: 251px;
+}
+  
+  

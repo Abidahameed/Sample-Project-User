@@ -1,0 +1,85 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <a href="#" id="logo"><img [src]= "'../../assets/images/icon8.png'" alt="Logo"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a href="javascript:void(0);" routerLink="/register" class="nav-link">Register</a>
+      </li>
+      <li class="nav-item">
+        <a href="javascript:void(0);" routerLink="/login" class="nav-link">Login</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+<div class="register-block">
+
+<div class="container">
+    <div class="row"> 
+        <div class="col register-sec">
+            <h2 class="text-center">Register Now</h2>
+            <form class="register-form" (ngSubmit)="onRegister()" [formGroup]="registrationForm">
+              <div class="form-group">
+                <label for="name" class="text-uppercase">Name</label>
+                <input type="text"[(ngModel)]="registerObj.Name"  class="form-control" id="name" formControlName="name" placeholder="Enter Name">
+                <div *ngIf="nameControl?.hasError('required') && (nameControl?.touched || registrationForm?.dirty)" class="text-danger">Name is required</div>
+
+
+              </div>
+              <div class="form-group">
+                <label for="email" class="text-uppercase">Email address</label>
+                <input type="email" [(ngModel)]="registerObj.Email" class="form-control" id="email" formControlName="email" placeholder="Enter email">
+                <div *ngIf="emailControl?.hasError('required') && (emailControl?.touched || registrationForm?.dirty)" class="text-danger">Email is required</div>
+                <div *ngIf="emailControl?.hasError('email') && emailControl?.dirty" class="text-danger">Invalid email format</div>
+              </div>
+
+
+              <div class="form-group">
+                <label for="password" class="text-uppercase">Password</label>
+                <input type="{{ showPassword ? 'text' : 'password' }}" [(ngModel)]="registerObj.password" class="form-control" id="password" placeholder="Enter Password" formControlName="password">
+                <div class="input-group-append">
+                  <!-- <span class="input-group-text" (click)="togglePasswordVisibility()">
+                    <i class="fa" [ngClass]="{'fa-eye': showPassword, 'fa-eye-slash': !showPassword}"></i>
+                  </span> -->
+                </div>
+                <div *ngIf="registrationForm.get('password')?.hasError('required') && (registrationForm.get('password')?.dirty || registrationForm.get('password')?.touched)" class="text-danger">Password is required</div>
+                <div *ngIf="registrationForm.get('password')?.hasError('pattern') && (registrationForm.get('password')?.dirty || registrationForm.get('password')?.touched)" class="text-danger">Invalid password format</div>
+              </div>
+
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="showPasswordCheckbox" (change)="togglePasswordVisibility()">
+                <label class="form-check-label small-text" for="showPasswordCheckbox">Show Password</label>
+              </div>
+
+              <div class="form-group">
+                <label for="phone" class="text-uppercase">Phone Number</label>
+                <input type="text" [(ngModel)]="registerObj.phoneNumber"  class="form-control" id="phone" placeholder="Phone Number" formControlName="phone">
+                <div *ngIf="registrationForm.get('phone')?.hasError('required') && (registrationForm.get('phone')?.dirty || registrationForm.get('phone')?.touched)" class="text-danger">Phone Number is required</div>
+                <div *ngIf="registrationForm.get('phone')?.hasError('pattern') && (registrationForm.get('phone')?.dirty || registrationForm.get('phone')?.touched)" class="text-danger">Invalid phone number format</div>
+              </div>
+
+              
+              <button type="submit" class="btn btn-primary" (click)="onRegister()" >Register</button>
+              <div class="form-group text-right">
+                Already have an account? Please <a routerLink="/login" class="text-primary">Login</a>
+              </div>
+            </form>
+            
+            
+   
+  
+  
+
+
+  
+</div>
+  </div>
+</div>
+
+</div>

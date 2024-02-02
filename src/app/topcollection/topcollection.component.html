@@ -1,0 +1,183 @@
+<nav class="navbar navbar-light">
+  <a href="#" id="logo"><img [src]="'../../assets/images/icon8.png'" alt="Logo"></a>
+  <form class="form-inline ml-auto">
+
+
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+         <a  href="javascript:void(0);" routerLink="/home" class="nav-link">Logout</a>
+       </li>
+ 
+     </ul> 
+
+    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" routerLink="/addtocart" >
+      <i class="fas fa-shopping-cart"></i> <!-- Add cart icon here -->
+      <!-- <div class="cart_value">{{ cartValue }}</div> -->
+
+    </button>
+  </form>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 custom-margin" *ngFor="let data of productList">
+      <div class="card custom-card-height">
+        <img [src]="data.image" class="card-img-top img-fluid small-image" alt="{{ data.Name }}">
+        <div class="card-body d-flex flex-column">
+         <div class="name-div">
+          <h5 class="card-title">{{ data.Name }}</h5>
+        </div>
+          <div style="margin-top: 1px;">
+            <button mat-raised-button (click)="openDialog(data)" type="submit" class="btn btn-outline-info custom-small-button">VIEW</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    
+    
+<!-- <ng-template #topsList>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2 custom-margin" *ngFor="let data of productList">
+        <div class="card">
+          <img class="card-img-top" [src]="data.imageUrl" alt="{{ data.name }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ data.name }}</h5>
+            <p>Price: ${{ data.price }}</p>
+            <button mat-raised-button (click)="openDialog(top)" type="submit" class="btn btn-outline-info custom-small-button">VIEW</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template> -->
+
+       <!--<div class="row">
+            <div class="col-md-2 custom-margin"> 
+              <div class="card">
+                <img class="card-img-top" src="../../assets/images/top1.jpg" alt="">
+                <div class="card-body">
+                  <h5 class="card-title">Top</h5>
+                  <button type="submit"  class="btn btn-primary custom-small-button">ADD TO CART</button>
+                </div>
+              </div>
+            </div>
+          
+            <div class="col-md-2 custom-margin"> 
+              <div class="card">
+                <img class="card-img-top" src="../../assets/images/top5.jpg" alt="">
+                <div class="card-body">
+                  <h5 class="card-title">Top</h5>
+                  <button type="submit"  class="btn btn-primary custom-small-button">ADD TO CART</button>
+                </div>
+              </div>
+            </div>
+          
+            <div class="col-md-2  custom-margin">
+              <div class="card">
+                <img class="card-img-top" src="../../assets/images/top3.jpg" alt="">
+                <div class="card-body">
+                  <h6 class="card-title">Top</h6>
+                  <button type="submit"  class="btn btn-primary custom-small-button">ADD TO CART</button>
+                </div>
+              </div>
+            </div>
+          
+            <div class="col-md-2  custom-margin">
+              <div class="card">
+                <img class="card-img-top" src="../../assets/images/top4.jpg" alt="">
+                <div class="card-body">
+                  <h5 class="card-title">Top</h5>
+                  <button type="submit" class="btn btn-primary custom-small-button">ADD TO CART</button>
+                </div>
+              </div>
+            </div>
+          
+            <div class="col-md-2  custom-margin"> 
+              <div class="card">
+                <img class="card-img-top" src="../../assets/images/top2.jpg" alt="">
+                <div class="card-body">
+                  <h5 class="card-title">Top</h5>
+                  <button type="submit"  class="btn btn-primary custom-small-button">ADD TO CART</button>
+                </div>
+              </div>
+            </div>
+          
+            <div class="col-md-2 custom-margin"> 
+              <div class="card">
+                <img class="card-img-top" src="../../assets/images/top6.jpg" alt="">
+                <div class="card-body">
+                  <h5 class="card-title">Top</h5>
+                  <button type="submit" class="btn btn-primary custom-small-button">ADD TO CART</button>
+                </div>
+              </div>
+            </div>
+          </div>-->
+       <!--<div class="row">
+            <div class="col-md-2  custom-margin"> 
+              <div class="card">
+                <img class="card-img-top" src="../../assets/images/top7.jpg" alt="">
+                <div class="card-body">
+                  <h5 class="card-title">Top</h5>
+                  <button type="submit" class="btn btn-primary custom-small-button">ADD TO CART</button>
+                </div>
+              </div>
+            </div>
+          
+            <div class="col-md-2 custom-margin"> 
+              <div class="card">
+                <img class="card-img-top" src="../../assets/images/top8.jpg" alt="">
+                <div class="card-body">
+                  <h5 class="card-title">Top</h5>
+                  <button type="submit"  class="btn btn-primary custom-small-button">ADD TO CART</button>
+                </div>
+              </div>
+            </div>
+          
+            <div class="col-md-2  custom-margin"> 
+              <div class="card">
+                <img class="card-img-top" src="../../assets/images/top9.jpg" alt="">
+                <div class="card-body">
+                  <h6 class="card-title">Top</h6>
+                  <button type="submit" class="btn btn-primary custom-small-button">ADD TO CART</button>
+                </div>
+              </div>
+            </div>
+          
+            <div class="col-md-2  custom-margin"> 
+              <div class="card">
+                <img class="card-img-top" src="../../assets/images/top10.jpg" alt="">
+                <div class="card-body">
+                  <h5 class="card-title">Top</h5>
+                  <button type="submit" class="btn btn-primary custom-small-button">ADD TO CART</button>
+                </div>
+              </div>
+            </div>
+          
+            <div class="col-md-2  custom-margin">
+              <div class="card">
+                <img class="card-img-top" src="../../assets/images/top11.jpg" alt="">
+                <div class="card-body">
+                  <h5 class="card-title">Top</h5>
+                  <button type="submit" class="btn btn-primary custom-small-button">ADD TO CART</button>
+                </div>
+              </div>
+            </div>
+          
+            <div class="col-md-2  custom-margin"> 
+              <div class="card">
+                <img class="card-img-top" src="../../assets/images/top12.jpg" alt="">
+                <div class="card-body">
+                  <h5 class="card-title">Top</h5>
+                  <button type="submit" class="btn btn-outline-info custom-small-button">VIEW</button>
+                </div>
+              </div>
+            </div>
+          </div>-->
+          
+    
+

@@ -1,0 +1,51 @@
+
+<nav class="navbar navbar-light">
+    <a href="#" id="logo"><img [src]="'../../assets/images/icon8.png'" alt="Logo"></a>
+    <form class="form-inline ml-auto">
+      <ul class="navbar-nav ml-auto">
+
+       
+        <li class="nav-item">
+          <a  href="javascript:void(0);" routerLink="/home" class="nav-link">Logout</a>
+        </li>
+
+      
+
+      </ul>
+      
+    </form>
+ </nav>
+  
+  <div class="register-block">
+    <div class="container">
+      <div class="text-center mt-10">
+  
+        <div class="row">
+          <div class="col-md-4 custom-margin" *ngFor="let item of category">
+            <div class="card">
+              <img class="card-img-top" [src]="item.imageUrl" alt="">
+              <div class="card-body">
+                <h5 class="card-title">{{ item.name }}</h5>
+               <!--<p>Color: {{ top.color }}</p>
+                <p>Size: {{ top.size }}</p>
+                <p>Price: ${{ top.price }}</p>-->
+               <!--<button type="submit" class="btn btn-outline-info custom-small-button">ADD TO CART</button>-->
+               <button (click)="onSeeMoreClick(item.type)" class="btn btn-outline-info custom-small-button">See More</button>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+      
+  
+      </div>
+    </div>
+  </div>
+  
+
+  
+    
+  
+    
+  
+  

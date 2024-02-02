@@ -1,0 +1,42 @@
+<!-- addtocart.component.html -->
+
+<nav class="navbar navbar-light">
+  <a href="#" id="logo"><img [src]="'../../assets/images/icon8.png'" alt="Logo"></a>
+  <form class="form-inline ml-auto">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a href="javascript:void(0);" routerLink="/home" class="nav-link">Logout</a>
+      </li>
+    </ul>
+    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" routerLink="/addtocart">
+      <i class="fas fa-shopping-cart"></i>
+    </button>
+  </form>
+</nav>
+
+<div class="container">
+  <section class="cart-section">
+    <h2>Cart</h2>
+    <table>
+      <tr *ngFor="let cartItem of CartItems; let i = index" (click)="selectProduct(cartItem)">
+        <td><img [src]="cartItem.products_Id?.image" alt="{{ cartItem.products_Id?.Name }}" class="img-fluid small-image">
+        </td>
+        <td>{{ cartItem.products_Id?.size }}</td>
+
+        <td>{{ cartItem.products_Id?.price * cartItem.quantity }}</td>
+        <td>
+          <button class="quantity-button minus" (click)="decrementQuantity(i)">-</button>
+          <span class="quantity-value">{{ cartItem.quantity }}</span>
+          <button class="quantity-button plus" (click)="incrementQuantity(i)">+</button>
+        </td>
+        <td>
+          <button mat-raised-button (click)="deleteProduct(i)" type="submit" class="btn btn-outline-info custom-small-button">Delete</button>
+          <button mat-raised-button (click)="buyNow()" type="submit" class="btn btn-outline-info custom-small-button">Buy now</button>
+        </td>
+      </tr>
+    </table>
+    <div class="subtotal-section">
+      <p>Subtotal: {{ calculateSubtotal() }}</p>
+    </div>
+  </section>
+</div>
